@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPOS System</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+
+
+      .card {
+        border-radius: 20px;
+        border: solid 1px black;
+        width: 250px;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+      }
+
+      .card-img {
+        width: 100%;
+        border-radius: 20px;
+      }
+
+      .add-basket {
+        background: green;
+        border: 1px solid greenyellow;
+        color: white;
+        padding: 10px;
+        border-radius: 20px;
+      }
+
+  </style>
+  </head>
+  <body>
+
+    <div id="menu">
+      <div class="card" v-for="item in menu">
+        <img  class="card-img" src="fruits.png">
+        <p>
+          <span>{{item.menuItemName}} </span>   <span>£{{item.menuItemPrice}}</span>
+          <button class="add-basket">add</button>
+        </p>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const menuList = {
+        data() {
+          return {
+            menu: [
+            { menuItemId: 1, menuItemName: 'oranges', menuItemPrice: 1.99, menuItemImage: 'fruits.png'},
+            { menuItemId: 2, menuItemName: 'apples', menuItemPrice: 2.99, menuItemImage: 'fruits.png'},
+            { menuItemId: 3, menuItemName: 'strawberries', menuItemPrice: 3.99, menuItemImage: 'fruits.png'},
+            { menuItemId: 4, menuItemName: 'mangos', menuItemPrice: 4.99, menuItemImage: 'fruits.png'},
+            { menuItemId: 5, menuItemName: 'plums', menuItemPrice: 5.99, menuItemImage: 'fruits.png'},
+            { menuItemId: 6, menuItemName: 'bananas', menuItemPrice: 6.99, menuItemImage: 'fruits.png'},
+            { menuItemId: 7, menuItemName: 'grapes', menuItemPrice: 7.99, menuItemImage: 'fruits.png'},
+            { menuItemId: 8, menuItemName: 'pears', menuItemPrice: 8.99, menuItemImage: 'fruits.png'},
+            { menuItemId: 9, menuItemName: 'carrots', menuItemPrice: 9.99, menuItemImage: 'fruits.png'},
+            { menuItemId: 9, menuItemName: 'water melons', menuItemPrice: 10.99, menuItemImage: 'fruits.png'},
+
+            ]
+          }
+        }
+      }
+      
+      Vue.createApp(menuList).mount('#menu')
+    </script>
+ <h4 align = "center">PRODUCT , QUANTITY & TOTAL ;</h4>
+<form align="center" method="post" action="" target="_self">
+<fieldset>
+    <br>
+  <textarea name="message" rows="12" cols="100" readonly> 
+  </textarea>
+  <br><br>
+</fieldset>
+  <br>
+<input type="submit" value="PAY NOW"> 
+</form>
+  </body>
+</html>
+
